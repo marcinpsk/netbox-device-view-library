@@ -1,0 +1,60 @@
+---
+version: 1
+
+meta:
+  description: "Avocent ACS 6048 console server (connector side)"
+
+canvas:
+  columns: 33
+  rows: 2
+
+views:
+  front:
+    rows:
+      - elements:
+          - kind: console-port
+            key: "console"
+      - elements:
+          - kind: console-port
+            key: "aux"
+      - spacer: 1
+      - sequence:
+          kind: interface
+          prefix: "eth-"
+          start: 0
+          count: 2
+          pattern: top-even
+      - spacer: 1
+      - group:
+          spacer: 1
+          sections:
+            - sequence:
+                kind: console-port
+                prefix: "ttys"
+                start: 1
+                count: 8
+            - sequence:
+                kind: console-port
+                prefix: "ttys"
+                start: 9
+                count: 8
+            - sequence:
+                kind: console-port
+                prefix: "ttys"
+                start: 17
+                count: 8
+            - sequence:
+                kind: console-port
+                prefix: "ttys"
+                start: 25
+                count: 8
+            - sequence:
+                kind: console-port
+                prefix: "ttys"
+                start: 33
+                count: 8
+            - sequence:
+                kind: console-port
+                prefix: "ttys"
+                start: 41
+                count: 8
