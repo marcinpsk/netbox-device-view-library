@@ -14,6 +14,7 @@ views:
       - elements:
           - kind: console-port
             key: "console"
+            label: "con"
       - elements:
           - kind: console-port
             key: "aux"

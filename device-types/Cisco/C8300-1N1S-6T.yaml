@@ -19,7 +19,7 @@ views:
       - {kind: interface, key: "gigabitethernet0-3", at: {row: 2, col: 18}}
       - {kind: interface, key: "gigabitethernet0-4", at: {row: 1, col: 20}}
       - {kind: interface, key: "gigabitethernet0-5", at: {row: 2, col: 20}}
-      - {kind: console-port, key: "con0", at: {row: 1, col: 22}}
+      - {kind: console-port, key: "con0", label: "con", at: {row: 1, col: 22}}
 
 variants:
   # NIM-16A in bay "NIM 1": console-server ports Async0/1/0 to Async0/1/15.
@@ -50,4 +50,4 @@ variants:
       - {kind: interface, key: "gigabitethernet0-3", at: {row: 2, col: 18}}
       - {kind: interface, key: "gigabitethernet0-4", at: {row: 1, col: 20}}
       - {kind: interface, key: "gigabitethernet0-5", at: {row: 2, col: 20}}
-      - {kind: console-port, key: "con0", at: {row: 1, col: 22}}
+      - {kind: console-port, key: "con0", label: "con", at: {row: 1, col: 22}}
