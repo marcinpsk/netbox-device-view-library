@@ -32,7 +32,7 @@ The layouts are schematic. They show each connector at its approximate position,
 
 ### Known limitation: console-server ports
 
-A layout does not bind console-server ports yet ([netbox-device-view#26](https://github.com/marcinpsk/netbox-device-view/issues/26)). The serial ports of the ACS6048 (`ttyS1` to `ttyS48`) and of the NIM-16A (`Async0/1/0` to `Async0/1/15`) show as cells, but without cable occupancy or links. Their keys use the plugin's port key format (`ttys1`, `async0-1-0`), so they bind when the plugin supports them. The ACS6048 artwork (below) binds them already.
+A layout binds console-server ports only in a plugin version with [netbox-device-view#36](https://github.com/marcinpsk/netbox-device-view/pull/36), which the pinned plugin commit of the check contains. In an older plugin version, the serial ports of the ACS6048 (`ttyS1` to `ttyS48`) and of the NIM-16A (`Async0/1/0` to `Async0/1/15`) show as cells, but without cable occupancy or links. Their keys use the plugin's port key format (`ttys1`, `async0-1-0`). The ACS6048 artwork (below) binds the serial ports too.
 
 ## Artwork
 
