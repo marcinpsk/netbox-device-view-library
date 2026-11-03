@@ -56,7 +56,7 @@ The import from a Data Source needs a plugin version with [netbox-device-view#14
 ## Add artwork
 
 1. Draw one SVG file for each face, in the [SVG profile](https://github.com/marcinpsk/netbox-device-view/blob/3e2514b/docs/artwork-bundles.md#svg-profile) of the plugin. The `viewBox` is in millimetres of the real face.
-2. Write `manifest.yaml`. Name the exact hardware SKU and the reference that you drew from, and bind each connector to the exact component names of the devicetype-library type.
+2. Write `manifest.yaml`. Name the exact hardware SKU and the reference that you drew from. A device definition binds each connector to the exact component name of the devicetype-library type. A module definition binds each connector to the NetBox template name, for example `TenGigabitEthernet1/{module}/1`. See the [manifest rules](https://github.com/marcinpsk/netbox-device-view/blob/3e2514b/docs/artwork-bundles.md#manifest) of the plugin.
 3. Put the files in `artwork/<Manufacturer>/<name>/`, where `<name>` is the name of the devicetype-library file.
 4. Run the check (below).
 5. In the pull request, record that you compared the drawing with the reference: the chassis, and the count, type, position and label of each connector.
