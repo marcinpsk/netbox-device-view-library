@@ -70,3 +70,5 @@ scripts/check.sh
 ```
 
 The script uses the plugin commit and the devicetype-library commit of the `pins/` entries. These entries are Git submodules only as pins: a clone does not need them, and the script fetches only what it needs. `.gitmodules` names the branch of each pin. Every week, Dependabot opens a pull request that moves a pin to the head of its branch. To follow another branch, change `branch` in `.gitmodules`.
+
+The CI also audits the workflows and the Dependabot configuration with [zizmor](https://docs.zizmor.sh/). Each action is pinned to a commit hash, and Dependabot moves these pins 7 days after a release. To run the audit locally, run `zizmor .` (for example `uvx zizmor .`).
