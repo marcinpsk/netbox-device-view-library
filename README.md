@@ -42,7 +42,7 @@ A layout does not bind console-server ports yet ([netbox-device-view#26](https:/
 
 Each artwork definition is an original drawing from the hardware reference that its manifest names, under the MIT licence of this repository. The rear face of the ACS6048 binds the console-server ports `ttyS1` to `ttyS48`, the interfaces `eth0` and `eth1`, the console ports `console` and `aux`, and the power ports `ps1` and `ps2`. The USB port and the LEDs on the front face are decorative and have no binding.
 
-To import the artwork, use **Plugins → Artwork Revisions → Import from Data Source** with the directory prefix `artwork/`. Then activate the revision for the device type. See the plugin's [artwork documentation](https://github.com/marcinpsk/netbox-device-view/blob/develop/docs/artwork-bundles.md).
+To import the artwork, use **Plugins → Artwork Revisions → Import from Data Source** with the directory prefix `artwork/`. Then activate the revision for the device type. See the plugin's [artwork documentation](https://github.com/marcinpsk/netbox-device-view/blob/9cdfef4/docs/artwork-bundles.md).
 
 ## Import into NetBox
 
