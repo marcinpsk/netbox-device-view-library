@@ -1,0 +1,15 @@
+version: 2
+updates:
+  # Moves each pins/ commit to the head of the branch that .gitmodules names.
+  - package-ecosystem: gitsubmodule
+    directory: /
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: "chore(pins)"
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: "chore(ci)"

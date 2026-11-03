@@ -1,0 +1,8 @@
+[submodule "pins/netbox-device-view"]
+	path = pins/netbox-device-view
+	url = https://github.com/marcinpsk/netbox-device-view.git
+	branch = feat/74-library-check
+[submodule "pins/devicetype-library"]
+	path = pins/devicetype-library
+	url = https://github.com/marcinpsk/devicetype-library.git
+	branch = ciena-els48

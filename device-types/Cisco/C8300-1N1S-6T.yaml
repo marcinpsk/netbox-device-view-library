@@ -28,6 +28,8 @@ variants:
     view: front
     elements:
       - {kind: module-slot, key: "sm-1", label: "SM 1", at: {row: 1, col: 1}, span: {rows: 2, cols: 6}}
+      # A label replaces the NIM 1 slot, because a port cannot cover a slot.
+      - {kind: label, key: "nim-1", label: "NIM 1", at: {row: 1, col: 8}, span: {rows: 2, cols: 8}}
       - {kind: console-port, key: "async0-1-0", at: {row: 1, col: 8}}
       - {kind: console-port, key: "async0-1-1", at: {row: 1, col: 9}}
       - {kind: console-port, key: "async0-1-2", at: {row: 1, col: 10}}
