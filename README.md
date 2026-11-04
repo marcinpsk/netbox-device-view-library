@@ -52,7 +52,7 @@ To import the artwork, do the steps in [Import into NetBox](#import-into-netbox)
 2. Click **Sync** and wait until the status of the Data Source is **Completed**.
 3. Go to **Plugins → Device Views**, click **Import from Data Source**, select the Data Source and set the directory prefix to `device-types/`.
 4. To import the artwork, go to **Plugins → Artwork Revisions**, click **Import from Data Source**, select the Data Source and set the directory prefix to `artwork/`. The import stores each definition as a revision, but it does not change a device view.
-5. Open each artwork revision, click **Activate** and select the device type. See the plugin's [artwork documentation](https://github.com/marcinpsk/netbox-device-view/blob/50cb378/docs/artwork-bundles.md#import-from-a-data-source).
+5. Open each artwork revision, click **Activate** and select the device type. See the plugin's [artwork documentation](https://github.com/marcinpsk/netbox-device-view/blob/27cc7b1/docs/artwork-bundles.md#import-from-a-data-source).
 
 The plugin suggests a device type when the parent directory is the manufacturer name and the file name is the model or the part number of the device type. Otherwise, select the device type manually.
 
@@ -60,17 +60,17 @@ The import from a Data Source is in the `main` branch of the plugin since commit
 
 ## Add a layout
 
-1. Write the layout in the [YAML layout format](https://github.com/marcinpsk/netbox-device-view/blob/50cb378/docs/layout-yaml.md) of the plugin.
+1. Write the layout in the [YAML layout format](https://github.com/marcinpsk/netbox-device-view/blob/27cc7b1/docs/layout-yaml.md) of the plugin.
 2. Name the file like the devicetype-library file of the same device type.
 3. Use the plugin's component keys: an interface `GigabitEthernet0/0/1` has the key `gigabitethernet0-1`, and a port `ttyS1` has the key `ttys1`.
 4. Run the check (below).
 
 ## Add artwork
 
-1. Draw one SVG file for each face, in the [SVG profile](https://github.com/marcinpsk/netbox-device-view/blob/50cb378/docs/artwork-bundles.md#svg-profile) of the plugin. The `viewBox` is in millimetres of the real face.
+1. Draw one SVG file for each face, in the [SVG profile](https://github.com/marcinpsk/netbox-device-view/blob/27cc7b1/docs/artwork-bundles.md#svg-profile) of the plugin. The `viewBox` is in millimetres of the real face.
     - A device definition has a `front` face, a `rear` face or both.
     - A module definition has one `installed` face: the face that shows in the module bay.
-2. Write `manifest.yaml`. Name the exact hardware SKU and the reference that you drew from. A device definition binds each connector to the exact component name of the devicetype-library type. A module definition binds each connector to the NetBox template name, for example `TenGigabitEthernet1/{module}/1`. See the [manifest rules](https://github.com/marcinpsk/netbox-device-view/blob/50cb378/docs/artwork-bundles.md#manifest) of the plugin.
+2. Write `manifest.yaml`. Name the exact hardware SKU and the reference that you drew from. A device definition binds each connector to the exact component name of the devicetype-library type. A module definition binds each connector to the NetBox template name, for example `TenGigabitEthernet1/{module}/1`. See the [manifest rules](https://github.com/marcinpsk/netbox-device-view/blob/27cc7b1/docs/artwork-bundles.md#manifest) of the plugin.
 3. Put the files in `artwork/<Manufacturer>/<name>/`, where `<name>` is the name of the devicetype-library file.
 4. Run the check (below).
 5. In the pull request, record that you compared the drawing with the reference: the chassis, and the count, type, position and label of each connector.
