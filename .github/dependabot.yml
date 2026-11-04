@@ -1,7 +1,7 @@
 version: 2
 updates:
   # Moves each pins/ commit to the head of the branch that .gitmodules names.
-  # The pins follow branches under review here, so they move without a cooldown.
+  # The pins follow branches under review here, so they use the shortest cooldown that Dependabot accepts.
   - package-ecosystem: gitsubmodule
     directory: /
     schedule:
@@ -9,7 +9,7 @@ updates:
     commit-message:
       prefix: "chore(pins)"
     cooldown:
-      default-days: 0 # zizmor: ignore[dependabot-cooldown]
+      default-days: 1 # zizmor: ignore[dependabot-cooldown]
   - package-ecosystem: github-actions
     directory: /
     schedule:
