@@ -56,7 +56,7 @@ To import the artwork, do the steps in [Import into NetBox](#import-into-netbox)
 
 The plugin suggests a device type when the parent directory is the manufacturer name and the file name is the model or the part number of the device type. Otherwise, select the device type manually.
 
-The import from a Data Source is in the `main` branch of the plugin since commit [d911efb](https://github.com/peterbaumert/netbox-device-view/commit/d911efb). See the plugin's [import documentation](https://github.com/peterbaumert/netbox-device-view/blob/d911efb/docs/import-from-data-source.md).
+The layout import from a Data Source is in the `main` branch of the plugin since commit [d911efb](https://github.com/peterbaumert/netbox-device-view/commit/d911efb). See the plugin's [import documentation](https://github.com/peterbaumert/netbox-device-view/blob/d911efb/docs/import-from-data-source.md). The `main` branch does not have the artwork import yet. For artwork, use the plugin commit that `pins/netbox-device-view` names.
 
 ## Add a layout
 
@@ -69,7 +69,7 @@ The import from a Data Source is in the `main` branch of the plugin since commit
 
 1. Draw one SVG file for each face, in the [SVG profile](https://github.com/marcinpsk/netbox-device-view/blob/27cc7b1/docs/artwork-bundles.md#svg-profile) of the plugin. The `viewBox` is in millimetres of the real face.
     - A device definition has a `front` face, a `rear` face or both.
-    - A module definition has one `installed` face: the face that shows in the module bay.
+    - A module definition has one `installed` face: the face that shows in the module bay. The pinned plugin commit cannot activate a module definition yet, so a module definition passes the check but does not show in NetBox.
 2. Write `manifest.yaml`. Name the exact hardware SKU and the reference that you drew from. A device definition binds each connector to the exact component name of the devicetype-library type. A module definition binds each connector to the NetBox template name, for example `TenGigabitEthernet1/{module}/1`. See the [manifest rules](https://github.com/marcinpsk/netbox-device-view/blob/27cc7b1/docs/artwork-bundles.md#manifest) of the plugin.
 3. Put the files in `artwork/<Manufacturer>/<name>/`, where `<name>` is the name of the devicetype-library file.
 4. Run the check (below).
