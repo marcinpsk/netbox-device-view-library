@@ -39,7 +39,7 @@ The plugin does not bind console-server ports yet ([netbox-device-view#26](https
 1. In NetBox, go to **Operations → Integrations → Data Sources** and add a Data Source:
     - **Type**: Git
     - **URL**: `https://github.com/marcinpsk/netbox-device-view-library.git`
-2. Click **Sync**.
+2. Click **Sync** and wait until the status of the Data Source is **Completed**.
 3. Go to **Plugins → Device Views**, click **Import from Data Source**, select the Data Source and set the directory prefix to `device-types/`.
 
 The plugin suggests a device type when the parent directory is the manufacturer name and the file name is the model. A match on the part number needs [netbox-device-view#25](https://github.com/marcinpsk/netbox-device-view/issues/25). Without it, select the device type manually.
