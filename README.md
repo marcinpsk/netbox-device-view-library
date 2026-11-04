@@ -41,6 +41,8 @@ The plugin does not bind console-server ports yet ([netbox-device-view#26](https
     - **URL**: `https://github.com/marcinpsk/netbox-device-view-library.git`
 2. Click **Sync** and wait until the status of the Data Source is **Completed**.
 3. Go to **Plugins → Device Views**, click **Import from Data Source**, select the Data Source and set the directory prefix to `device-types/`.
+4. To import the artwork, go to **Plugins → Artwork Revisions**, click **Import from Data Source**, select the Data Source and set the directory prefix to `artwork/`. The import stores each definition as a revision, but it does not change a device view.
+5. Open each artwork revision, click **Activate** and select the device type. See the plugin's [artwork documentation](https://github.com/marcinpsk/netbox-device-view/blob/acf4994/docs/artwork-bundles.md#import-from-a-data-source).
 
 The plugin suggests a device type when the parent directory is the manufacturer name and the file name is the model. A match on the part number needs [netbox-device-view#25](https://github.com/marcinpsk/netbox-device-view/issues/25). Without it, select the device type manually.
 
