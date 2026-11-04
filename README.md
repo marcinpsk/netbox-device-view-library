@@ -32,7 +32,17 @@ The layouts are schematic. They show each connector at its approximate position,
 
 ### Known limitation: console-server ports
 
-The plugin does not bind console-server ports yet ([netbox-device-view#26](https://github.com/marcinpsk/netbox-device-view/issues/26)). The serial ports of the ACS6048 (`ttyS1` to `ttyS48`) and of the NIM-16A (`Async0/1/0` to `Async0/1/15`) show as cells, but without cable occupancy or links. Their keys use the plugin's port key format (`ttys1`, `async0-1-0`), so they bind when the plugin supports them.
+A layout binds console-server ports only in a plugin version with [netbox-device-view#36](https://github.com/marcinpsk/netbox-device-view/pull/36), which the pinned plugin commit of the check contains. In an older plugin version, the serial ports of the ACS6048 (`ttyS1` to `ttyS48`) and of the NIM-16A (`Async0/1/0` to `Async0/1/15`) show as cells, but without cable occupancy or links. Their keys use the plugin's port key format (`ttys1`, `async0-1-0`). The ACS6048 artwork (below) binds the serial ports too.
+
+## Artwork
+
+| Directory | Hardware | Faces | Reference |
+|---|---|---|---|
+| `artwork/Avocent/ACS6048/` | Avocent ACS6048DAC-G2 (dual AC) | front, rear | Vertiv 590-1764-501A, figure 2.2, tables 2.1 and A.1 |
+
+Each artwork definition is an original drawing from the hardware reference that its manifest names, under the MIT licence of this repository. The rear face of the ACS6048 binds the console-server ports `ttyS1` to `ttyS48`, the interfaces `eth0` and `eth1`, the console ports `console` and `aux`, and the power ports `ps1` and `ps2`. The USB port and the LEDs on the front face are decorative and have no binding.
+
+To import the artwork, do the steps in [Import into NetBox](#import-into-netbox).
 
 ## Import into NetBox
 
