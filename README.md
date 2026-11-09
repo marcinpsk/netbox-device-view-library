@@ -39,8 +39,15 @@ A layout binds console-server ports only in a plugin version with [netbox-device
 | Directory | Hardware | Faces | Reference |
 |---|---|---|---|
 | `artwork/Avocent/ACS6048/` | Avocent ACS6048DAC-G2 (dual AC) | front, rear | Vertiv 590-1764-501A, figure 2.2, tables 2.1 and A.1 |
+| `artwork/Cisco/C8300-1N1S-6T/` | Cisco Catalyst 8300-1N1S-6T | front (I/O side), rear (PSU and fan tray side) | Cisco C8300 hardware installation guide, Overview, figures 1 and 2; data sheet table 15 |
+| `artwork/Cisco/C-SM-16P4M2X/` | Cisco C-SM-16P4M2X service module | installed | Cisco C-SM-16P4M2X installation guide, figure 2; data sheet table 1 |
+| `artwork/Cisco/GLC-TE/` | Cisco GLC-TE 1000BASE-T SFP | installed | Cisco Gigabit Ethernet SFP data sheet, figure 2 |
 
 Each artwork definition is an original drawing from the hardware reference that its manifest names, under the MIT licence of this repository. The rear face of the ACS6048 binds the console-server ports `ttyS1` to `ttyS48`, the interfaces `eth0` and `eth1`, the console ports `console` and `aux`, and the power ports `ps1` and `ps2`. The USB port and the LEDs on the front face are decorative and have no binding.
+
+The C8300-1N1S-6T definition binds the interfaces `GigabitEthernet0/0/0` to `0/0/3` and the console port `con0`. The USB ports, the micro-USB console port, the LEDs, the M.2 cover, the RFID tag, the ground lug and the power switch are decorative. Its bays map to the module bays `Transceiver 0/0/4`, `Transceiver 0/0/5`, `NIM 1` and `SM 1` on the front face, and `PSU0`, `PSU1` and `PIM 1` on the rear face. The C-SM-16P4M2X definition binds `GigabitEthernet{module}/0/0` to `/15` and `TwoGigabitEthernet{module}/0/16` to `/19`, and its bays map to `Transceiver 1/0/20` and `Transceiver 1/0/21`. The GLC-TE definition binds the interface `{module}`.
+
+These definitions use the transceiver model of the pinned devicetype-library commit: the host has a module bay for each SFP port, the position of the bay is the full interface name (for example `GigabitEthernet0/0/4`), and the transceiver owns the interface. Thus an installed GLC-TE creates the interface `GigabitEthernet0/0/4`. In the netbox-community devicetype-library, the C8300-1N1S-6T has the interfaces `GigabitEthernet0/0/4` and `0/0/5` on the chassis and no transceiver bays. With that type, the two interfaces have no connector. In a plugin version with [netbox-device-view#86](https://github.com/marcinpsk/netbox-device-view/pull/86), the two SFP bays of the artwork also show **not recorded**. The pinned plugin commit of the check does not draw installed modules and their bays: that starts with [netbox-device-view#80](https://github.com/marcinpsk/netbox-device-view/pull/80).
 
 To import the artwork, do the steps in [Import into NetBox](#import-into-netbox).
 
